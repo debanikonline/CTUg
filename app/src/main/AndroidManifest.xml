@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="debanikandroidstudio.ctug">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LoginSwitcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".ViewDetails" />
+        <activity android:name=".AdminEditor" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".WelcomeADMIN" />
+        <activity android:name=".AdminOtherDatabaseSelectionView" />
+        <activity android:name=".Login_PageUser" />
+        <activity android:name=".NewUserRegisterPage" />
+        <activity android:name=".Insert_StopageDetail" />
+        <activity android:name=".Insert_Route_Detail" />
+        <activity android:name=".Insert_Allot_Bus" />
+        <activity
+            android:name=".WelcomeUSER_Navi"
+            android:label="@string/title_activity_welcome_user__navi"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>

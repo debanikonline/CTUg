@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8FEFF"
+    tools:context="debanikandroidstudio.ctug.Login_PageUser">
+
+    <EditText
+        android:id="@+id/UserloginTextid"
+        android:hint="Enter User Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="71dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/UserPassTextID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/UserloginTextid"
+        android:layout_below="@+id/UserloginTextid"
+        android:layout_marginTop="31dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/UserLoginButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/UserPassTextID"
+        android:layout_marginTop="100dp"
+        android:text="Login"
+        android:background="#E8FEFF"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/UserPageNewUserButtonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/UserLoginButtonID"
+        android:layout_below="@+id/UserLoginButtonID"
+        android:layout_marginTop="32dp"
+        android:text="New User"
+        android:background="#E8FEFF"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="login__page_user"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/UserLoginButtonID"
+        android:layout_marginEnd="11dp" />
+</RelativeLayout>

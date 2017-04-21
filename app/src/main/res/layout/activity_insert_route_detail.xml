@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="debanikandroidstudio.ctug.Insert_Route_Detail">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="11dp"
+        android:hint="insert_route_detail" />
+
+    <EditText
+        android:id="@+id/routenameID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="77dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter Route Name" />
+
+    <EditText
+        android:id="@+id/startID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter Start Point"
+        android:layout_below="@+id/routenameID"
+        android:layout_alignStart="@+id/routenameID" />
+
+    <EditText
+        android:id="@+id/stopID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/startID"
+        android:layout_below="@+id/startID"
+        android:layout_marginTop="13dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Enter Stop Point" />
+
+    <EditText
+        android:id="@+id/starttimeID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/stopID"
+        android:layout_below="@+id/stopID"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:text="Enter First Bus Time"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/stoptimeid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/starttimeID"
+        android:layout_below="@+id/starttimeID"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:text="Enter Last Bus Time"
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/SaveRouteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stoptimeid"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:text="Save" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignEnd="@+id/routenameID"
+        android:layout_alignStart="@+id/routenameID"
+        android:layout_below="@+id/textView9"
+        android:layout_marginTop="36dp"
+        android:textSize="15dp"
+        android:text="RouteID will be Auto-Generated" />
+</RelativeLayout>

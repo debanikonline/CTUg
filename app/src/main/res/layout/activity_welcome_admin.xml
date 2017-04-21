@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8FEFF"
+    tools:context="debanikandroidstudio.ctug.WelcomeADMIN">
+
+    <Button
+        android:id="@+id/newadminentryButtonID"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="94dp"
+        android:background="#E8FEFF"
+        android:text="New Admin Entry "
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/viewAdminDatabaseID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/newadminentryButtonID"
+        android:layout_alignStart="@+id/newadminentryButtonID"
+        android:layout_below="@+id/newadminentryButtonID"
+        android:layout_marginTop="41dp"
+        android:background="#E8FEFF"
+        android:text="View Admin Database" />
+
+    <Button
+        android:id="@+id/insertSTOPbuttonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/viewAdminDatabaseID"
+        android:layout_alignStart="@+id/viewAdminDatabaseID"
+        android:layout_below="@+id/viewAdminDatabaseID"
+        android:layout_marginTop="29dp"
+        android:background="#E8FEFF"
+        android:text="Enter Bus Stopage Detail" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="18dp"
+        android:text="welcome_admin" />
+
+    <Button
+        android:id="@+id/newROUTE_buttonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/insertSTOPbuttonID"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/textView8"
+        android:text="Insert New Bus Route" />
+
+    <Button
+        android:id="@+id/allotbus_buttonID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/newROUTE_buttonID"
+        android:layout_alignStart="@+id/newROUTE_buttonID"
+        android:layout_below="@+id/newROUTE_buttonID"
+        android:layout_marginTop="12dp"
+        android:text="Allot Bus to Route" />
+
+</RelativeLayout>

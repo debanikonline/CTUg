@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_admin_editor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#E8FEFF"
+    tools:context="debanikandroidstudio.ctug.AdminEditor">
+
+    <TextView
+        android:id="@+id/admineditoruname"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:textSize="60dp"
+        android:gravity="center"
+
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/admineditorpassword"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_alignStart="@+id/admineditoruname"
+        android:layout_below="@+id/admineditoruname"
+        android:layout_marginTop="26dp"
+        android:ems="10"
+        android:textSize="60dp"
+
+        android:inputType="textPersonName" />
+
+    <Button
+        android:id="@+id/admineditorEDITbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/admineditorpassword"
+        android:layout_marginTop="65dp"
+        android:background="#E8FEFF"
+        android:text="Update Password" />
+
+    <Button
+        android:id="@+id/EditorDELETE_fromDATABASE_Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/admineditorEDITbutton"
+        android:layout_alignStart="@+id/admineditorEDITbutton"
+        android:layout_below="@+id/admineditorEDITbutton"
+        android:layout_marginTop="17dp"
+        android:background="#E8FEFF"
+        android:text="Delete Entry" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:text="admin_editor" />
+</RelativeLayout>

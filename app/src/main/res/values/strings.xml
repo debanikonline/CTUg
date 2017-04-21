@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CTU Bus Guide</string>
+    <string name="title_activity_welcome_user__navi">WelcomeUSER_Navi</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
