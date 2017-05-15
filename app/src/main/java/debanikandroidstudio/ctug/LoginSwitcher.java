@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -15,54 +16,26 @@ import java.util.List;
 
 public class LoginSwitcher extends AppCompatActivity
 {
-    Spinner loginas;
-    String selected="";
-    Button proceed;
+    ImageButton user,admin;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_switcher);
-        proceed=(Button)findViewById(R.id.loginswitcherbuttonID);
-        loginas=(Spinner)findViewById(R.id.Login_Switcher_SpinnerID);
-        List items=new ArrayList();
-        items.add("User Login");
-        items.add("Administrator");
-        loginas.setPrompt("Login As");
-        ArrayAdapter <String> adp=new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,items);
-        adp.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        loginas.setAdapter(adp);
-        loginas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        user=(ImageButton)findViewById(R.id.userlogin);
+        admin=(ImageButton)findViewById(R.id.adminlogin);
+        user.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
-            {
-                    selected=loginas.getSelectedItem().toString();
-
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onClick(View v) {
+                Intent user=new Intent(getApplicationContext(),Login.class);
+                startActivity(user);
             }
         });
-        proceed.setOnClickListener(new View.OnClickListener() {
+        admin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                String change=selected;
-                if (change.equals("User Login"))
-                {
-                    Intent gotouserloginpage=new Intent(getApplicationContext(),Login_PageUser.class);
-                    startActivity(gotouserloginpage);
-
-                }
-                else
-                {
-                    Intent gotoadminloginpage=new Intent(getApplicationContext(),MainActivity.class);
-                    startActivity(gotoadminloginpage);
-                }
+            public void onClick(View v) {
+                Intent admin=new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(admin);
             }
         });
 

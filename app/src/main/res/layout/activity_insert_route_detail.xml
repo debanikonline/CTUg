@@ -25,7 +25,7 @@
         android:layout_marginTop="77dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Route Name" />
+        android:hint="Enter Route Name" />
 
     <EditText
         android:id="@+id/startID"
@@ -34,7 +34,7 @@
         android:layout_marginTop="15dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Start Point"
+        android:hint="Enter Start Point"
         android:layout_below="@+id/routenameID"
         android:layout_alignStart="@+id/routenameID" />
 
@@ -47,7 +47,7 @@
         android:layout_marginTop="13dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Enter Stop Point" />
+        android:hint="Enter Stop Point" />
 
     <EditText
         android:id="@+id/starttimeID"
@@ -57,7 +57,7 @@
         android:layout_below="@+id/stopID"
         android:layout_marginTop="15dp"
         android:ems="10"
-        android:text="Enter First Bus Time"
+        android:hint="Enter First Bus Time"
         android:inputType="textPersonName" />
 
     <EditText
@@ -68,7 +68,7 @@
         android:layout_below="@+id/starttimeID"
         android:layout_marginTop="21dp"
         android:ems="10"
-        android:text="Enter Last Bus Time"
+        android:hint="Enter Last Bus Time"
         android:inputType="textPersonName" />
 
     <Button

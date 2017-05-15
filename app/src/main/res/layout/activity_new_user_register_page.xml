@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context="debanikandroidstudio.ctug.NewUserRegisterPage"
-    android:background="#E8FEFF">
+    android:background="@drawable/animationlist">
 
 <!--<ScrollView-->
     <!--android:layout_width="match_parent"-->
@@ -69,45 +70,63 @@
 
     <EditText
         android:id="@+id/newuser_NameID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginEnd="73dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:textColorHint="#ffffff"
+        android:background="#26ffffff"
+        android:padding="27px"
+        android:layout_marginTop="36dp"
         android:ems="10"
+
         android:inputType="textPersonName"
-        android:hint="Enter Your Name" />
+        android:hint="Enter Your Name"
+        android:layout_below="@+id/textView14"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/newuser_emailID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:textColorHint="#ffffff"
+        android:background="#26ffffff"
+        android:padding="27px"
         android:layout_alignEnd="@+id/newuser_NameID"
         android:layout_below="@+id/newuser_NameID"
         android:layout_marginTop="24dp"
         android:ems="10"
+
         android:inputType="textPersonName"
         android:hint="Enter Your email" />
 
     <EditText
         android:id="@+id/newuser_PhoneID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:textColorHint="#ffffff"
+        android:background="#26ffffff"
         android:layout_alignStart="@+id/newuser_emailID"
         android:layout_below="@+id/newuser_emailID"
         android:layout_marginTop="22dp"
         android:ems="10"
+        android:padding="27px"
         android:inputType="number"
         android:hint="Enter Phone Number" />
 
     <EditText
         android:id="@+id/newuser_PasswordID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:padding="27px"
+        android:textColorHint="#ffffff"
+        android:background="#26ffffff"
         android:layout_alignStart="@+id/newuser_PhoneID"
         android:layout_below="@+id/newuser_PhoneID"
         android:layout_marginTop="23dp"
+
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Enter Password" />
@@ -116,30 +135,41 @@
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/newuser_PasswordID"
+        android:textSize="45px"
+        android:padding="27px"
+        android:gravity="center"
+        android:textColorHint="#ffffff"
+
+        android:layout_marginTop="9dp"
+
+        android:hint="Select Secret Question"
         android:layout_below="@+id/newuser_PasswordID"
-        android:layout_marginTop="29dp"
-        android:hint="Select Secret Question" />
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:id="@+id/newuser_SpinnerID"
+        android:textColorHint="@color/blue_500"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:spinnerMode="dialog"
         android:layout_below="@+id/textView10"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        />
+        android:layout_marginTop="15dp" />
 
     <EditText
         android:id="@+id/newuser_AnswerID"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/newuser_PasswordID"
-        android:layout_below="@+id/newuser_SpinnerID"
-        android:layout_marginTop="12dp"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:padding="27px"
+        android:textColorHint="#ffffff"
+        android:background="#26ffffff"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="Type Your Answer" />
+        android:hint="Type Your Answer"
+        android:layout_below="@+id/newuser_SpinnerID"
+        android:layout_alignStart="@+id/newuser_PasswordID"
+        android:layout_marginTop="11dp" />
 
     <Button
         android:id="@+id/newuser_ButtonID"
@@ -148,15 +178,17 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="11dp"
         android:text="Register"
+        android:background="@drawable/fullborder"
+        android:textColor="@color/blue_500"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:background="#E8FEFF"/>
+        />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:textColor="@color/blue_500"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"

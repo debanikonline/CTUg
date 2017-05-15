@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by debanikmoulick on 21/04/17.
- */
+
 
 public class About_j extends Fragment
 {

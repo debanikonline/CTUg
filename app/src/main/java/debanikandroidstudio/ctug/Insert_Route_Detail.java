@@ -41,12 +41,12 @@ public class Insert_Route_Detail extends AppCompatActivity
             public void onClick(View v)
             {
                 insert();
-               // routename.setText("");
-                //start.setText("");
-                //stop.setText("");
-                //starttime.setText("");
-                //stoptime.setText("");
                 Toast.makeText(getApplicationContext(),"Details Saved",Toast.LENGTH_LONG).show();
+                routename.setText("");
+                start.setText("");
+                stop.setText("");
+                starttime.setText("");
+                stoptime.setText("");
 
             }
         });

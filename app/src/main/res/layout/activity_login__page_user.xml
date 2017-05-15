@@ -9,6 +9,7 @@
 
     <EditText
         android:id="@+id/UserloginTextid"
+        android:textColorHint="@color/blue_500"
         android:hint="Enter User Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,6 +23,7 @@
         android:id="@+id/UserPassTextID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColorHint="@color/blue_500"
         android:layout_alignEnd="@+id/UserloginTextid"
         android:layout_below="@+id/UserloginTextid"
         android:layout_marginTop="31dp"
@@ -36,6 +38,7 @@
         android:layout_below="@+id/UserPassTextID"
         android:layout_marginTop="100dp"
         android:text="Login"
+        android:textColor="@color/blue_500"
         android:background="#E8FEFF"
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
@@ -48,6 +51,7 @@
         android:layout_below="@+id/UserLoginButtonID"
         android:layout_marginTop="32dp"
         android:text="New User"
+        android:textColor="@color/blue_500"
         android:background="#E8FEFF"
         android:layout_alignParentEnd="true" />
 

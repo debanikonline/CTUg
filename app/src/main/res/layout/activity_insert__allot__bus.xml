@@ -24,7 +24,7 @@
         android:layout_marginTop="63dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Insert Bus Number" />
+        android:hint="Allot Bus Number to above route" />
 
     <Button
         android:id="@+id/allotbutnID"

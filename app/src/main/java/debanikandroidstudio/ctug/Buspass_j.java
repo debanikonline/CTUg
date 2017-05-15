@@ -7,9 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by debanikmoulick on 20/04/17.
- */
+
 
 public class Buspass_j extends Fragment
 {
@@ -17,7 +15,7 @@ public class Buspass_j extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v1=inflater.inflate(R.layout.buspass_x,null);
+        View v1=inflater.inflate(R.layout.buspass_x,container,false);
         return v1;
     }
 }

@@ -3,6 +3,7 @@ package debanikandroidstudio.ctug;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.StrictMode;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -38,7 +39,8 @@ public class AdminEditor extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_editor);
-
+        StrictMode.ThreadPolicy threadPolicy = new StrictMode.ThreadPolicy.Builder().build();
+        StrictMode.setThreadPolicy(threadPolicy);
         updateusername=(TextView) findViewById(R.id.admineditoruname);
         updatepassword=(EditText)findViewById(R.id.admineditorpassword);
         updateusername.setText(getIntent().getExtras().getString("uname"));
@@ -210,6 +212,7 @@ public class AdminEditor extends AppCompatActivity
             Toast.makeText(getApplicationContext(),""+e,Toast.LENGTH_SHORT).show();
         }
     }
+
 
 
 }

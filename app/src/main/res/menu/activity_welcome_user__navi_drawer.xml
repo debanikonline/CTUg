@@ -1,46 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/home"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Home" />
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_buspass"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Bus Pass" />
-        <item
-            android:id="@+id/nav_busfares"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Bus Fares" />
-        <item
-            android:id="@+id/nav_helpline"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Helpline" />
-        <item
-            android:id="@+id/nav_feedback"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Feedback" />
-        <item
-            android:id="@+id/nav_routemaps"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Route Maps" />
-        <item
-            android:id="@+id/nav_refer"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Refer a Friend" />
-        <item
-            android:id="@+id/nav_rateus"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Rate Us" />
-        <item
-            android:id="@+id/nav_About"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="About" />
+    <item
+        android:id="@+id/buspass"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="Bus Pass" />
 
-    </group>
+    <item
+        android:id="@+id/busfares"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:title="Bus Fares" />
 
+    <item
+        android:id="@+id/helpline"
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="Helpline" />
 
-
+    <item
+        android:id="@+id/feedback"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Feedback" />
+    <item
+        android:id="@+id/routemaps"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Route Maps" />
+    <item
+        android:id="@+id/refer"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Refer to a Friend" />
+    <item
+        android:id="@+id/rate"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Rate Us" />
+    <item
+        android:id="@+id/about"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="About" />
 </menu>
