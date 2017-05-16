@@ -19,7 +19,7 @@ public class Busfare_j extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        View v1= inflater.inflate(R.layout.busfare_x,null);
-        return v1;
+        View v2= inflater.inflate(R.layout.busfare_x,null);
+        return v2;
     }
 }
