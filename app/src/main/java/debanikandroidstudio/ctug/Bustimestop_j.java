@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,7 @@ public class Bustimestop_j extends android.support.v4.app.Fragment {
     int rid;
     Custommaan adp;
     TextView n, t;
+    Button b;
     String stopname[], stoptime[];
     String hosturl = "http://192.168.43.113/CTU/getrouteidgold.php";
     String hosturl2 = "http://192.168.43.113/CTU/getstopnameandtime.php";
