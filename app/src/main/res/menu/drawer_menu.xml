@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homepc"
+        android:icon="@android:drawable/ic_menu_camera"
+        android:title="Home" />
+
+    <!--<item-->
+        <!--android:id="@+id/routepc"-->
+        <!--android:icon="@android:drawable/ic_menu_gallery"-->
+        <!--android:title="Route" />-->
+    <!--<item-->
+        <!--android:id="@+id/bustimestop"-->
+        <!--android:icon="@android:drawable/ic_menu_gallery"-->
+        <!--android:title="Bus Time/Stop" />-->
+    <item
+        android:id="@+id/buspasspc"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="Bus Pass" />
+
+    <item
+        android:id="@+id/busfarespc"
+        android:icon="@android:drawable/ic_menu_set_as"
+        android:title="Bus Fares" />
+
+    <item
+        android:id="@+id/helplinepc"
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="Helpline" />
+
+    <item
+        android:id="@+id/feedbackpc"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Feedback" />
+    <item
+        android:id="@+id/routemapspc"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Route Maps" />
+    <item
+        android:id="@+id/referpc"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Refer to a Friend" />
+    <item
+        android:id="@+id/ratepc"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="Rate Us" />
+    <item
+        android:id="@+id/aboutpc"
+        android:icon="@android:drawable/ic_menu_info_details"
+        android:title="About" />
+</menu>

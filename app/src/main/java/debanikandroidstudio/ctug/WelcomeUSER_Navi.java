@@ -44,23 +44,13 @@ public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationVie
             tabLayout.addTab(tabLayout.newTab().setText(pageTitle[i]));
 
         }
-
-        //set gravity for tab bar
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-        //handling navigation view item event
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         assert navigationView != null;
         navigationView.setNavigationItemSelectedListener(this);
-
-        //set viewpager adapter
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(pagerAdapter);
-
-        //change Tab selection when swipe ViewPager
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        //change ViewPager page when tab selected
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

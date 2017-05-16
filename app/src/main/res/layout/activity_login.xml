@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/animationlist"
+    android:id="@+id/loginback"
+    tools:context="debanikandroidstudio.ctug.Login">
+
+    <EditText
+
+        android:id="@+id/name"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:textSize="45px"
+        android:textColor="#ffffff"
+        android:background="#26ffffff"
+        android:padding="27px"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp"
+        android:ems="10"
+
+
+        android:inputType="textPersonName"
+        android:hint="Phone number, email or username"
+
+        android:textColorHint="#ffffff"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:padding="27px"
+        android:textColor="#ffffff"
+        android:background="#26ffffff"
+        android:inputType="textPersonName"
+        android:hint="Password"
+        android:textSize="45px"
+        android:textColorHint="#ffffff"
+        android:layout_below="@+id/name"
+        android:layout_alignStart="@+id/name" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/password"
+        android:layout_below="@+id/password"
+        android:layout_marginTop="17dp"
+        android:text="Log In"
+        android:textAllCaps="false"
+        android:textColor="#26ffffff"
+        android:background="@drawable/fullborder"
+        android:layout_alignEnd="@+id/password" />
+
+    <Spinner
+        android:id="@+id/spinlang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="27dp"
+        android:text="Two Points"
+        android:textSize="60dp"
+        android:textColor="#ffffff"
+        android:layout_below="@+id/spinlang"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/forgotpasstextview"
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:text="@string/forgot"
+        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:background="@drawable/bottomborder"
+        android:layout_below="@+id/login"
+        android:layout_alignStart="@+id/login" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="OR"
+        android:gravity="center"
+
+        android:layout_below="@+id/forgotpasstextview"
+        android:layout_alignParentStart="true" />
+
+    <RelativeLayout
+        android:layout_width="330sp"
+        android:layout_height="50sp"
+        android:background="#ffffff"
+        android:layout_marginTop="11dp"
+        android:gravity="center"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/forgotpasstextview">
+
+        <Button
+            android:id="@+id/fbLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@null"
+            android:drawableLeft="@mipmap/fb90"
+
+            android:gravity="center"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:padding="30px"
+            android:text="    Login With Facebook"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="40px" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:text="@string/signup"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:background="@drawable/topborder"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>
+
+

@@ -84,14 +84,14 @@ public class Home extends android.support.v4.app.Fragment
                 }
             }
             String data=stringBuilder.toString();
-            Toast.makeText(getContext(),""+data,Toast.LENGTH_LONG).show();
+           // Toast.makeText(getContext(),""+data,Toast.LENGTH_LONG).show();
             JSONArray jsonarray=new JSONArray(data);
             JSONObject jsonobject=null;
 
             for(int i=0;i<jsonarray.length();i++)
             {
                 jsonobject=jsonarray.getJSONObject(i);
-                String detail=jsonobject.getString("startname");
+                String detail=jsonobject.getString("stopname");
 
                 list.add(i,detail);
 
