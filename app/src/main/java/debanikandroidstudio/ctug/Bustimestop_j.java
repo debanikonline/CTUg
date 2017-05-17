@@ -32,8 +32,8 @@ import java.net.URLEncoder;
  * Created by debanikmoulick on 03/05/17.
  */
 
-public class Bustimestop_j extends android.support.v4.app.Fragment {
-    String routename="ISBT 43 to IT PARK Chd via Railway Station";
+public class Bustimestop_j extends android.support.v4.app.Fragment
+{
     int rid;
     Custommaan adp;
     TextView n, t;
@@ -42,29 +42,33 @@ public class Bustimestop_j extends android.support.v4.app.Fragment {
     String hosturl = "http://192.168.43.113/CTU/getrouteidgold.php";
     String hosturl2 = "http://192.168.43.113/CTU/getstopnameandtime.php";
     ListView lst;
-
+    String routename="";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.bustimestop_x, container, false);
+        routename=Routes_j.data;
+        Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
+
         //String item=getActivity().getIntent().getExtras().getString("routename");
         StrictMode.ThreadPolicy poi=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(poi);
         lst=(ListView)v.findViewById(R.id.stoplist);
+        if(routename.equals(""))
+        {
+            Toast.makeText(getContext(), "not route selected", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(getActivity().getApplicationContext(), "selected route nam is --" + routename, Toast.LENGTH_LONG).show();
+            routeid(routename);
+            getstopandtime(rid);
+            //Toast.makeText(this, "stop name---"+stopname[4]+"stop time ----"+stoptime[4], Toast.LENGTH_SHORT).show();
+            adp=new Custommaan(getContext(),stopname,stoptime);
+            lst.setAdapter(adp);
+//        Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
+        }
 
-
-//        Intent img=new Intent();
-//
-//        routename=img.getStringExtra("routename");
-        //Toast.makeText(this, "img wala routename"+routename, Toast.LENGTH_SHORT).show();
-
-
-        routeid(routename);
-        getstopandtime(rid);
-        //Toast.makeText(this, "stop name---"+stopname[4]+"stop time ----"+stoptime[4], Toast.LENGTH_SHORT).show();
-        adp=new Custommaan(getContext(),stopname,stoptime);
-        lst.setAdapter(adp);
-        Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
         return v;
     }
     public void routeid(String routename)
@@ -100,7 +104,7 @@ public class Bustimestop_j extends android.support.v4.app.Fragment {
             JSONObject object=new JSONObject(data);
 
             rid=object.getInt("routeid");
-            Toast.makeText(getContext(), "ye wala"+rid, Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), "ye wala"+rid, Toast.LENGTH_SHORT).show();
 
 
         }
@@ -152,9 +156,9 @@ public class Bustimestop_j extends android.support.v4.app.Fragment {
 
 
                 }
-                Toast.makeText(getContext(), "stopname lenght-"+stopname.length, Toast.LENGTH_SHORT).show();
-//                Toast.makeText(this, stopname[1], Toast.LENGTH_SHORT).show();
-//                Toast.makeText(this, stopname[2], Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(), "stopname lenght-"+stopname.length, Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), stopname[1], Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), stopname[2], Toast.LENGTH_SHORT).show();
 //                Toast.makeText(this, stopname[3], Toast.LENGTH_SHORT).show();
 //                Toast.makeText(this, stopname[4], Toast.LENGTH_SHORT).show();
 //                Toast.makeText(this, stopname[5], Toast.LENGTH_SHORT).show();

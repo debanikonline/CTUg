@@ -43,6 +43,7 @@ public class Routes_j extends android.support.v4.app.Fragment
     private ViewPager pager;
     String updatepassword="";
     TabLayout tabLayout;
+    static String data="";
     private String[] pageTitle = {"SEARCH", "ROUTES", "BUS TIME/\nSTOPS"};
     @Nullable
     @Override
@@ -53,16 +54,26 @@ public class Routes_j extends android.support.v4.app.Fragment
         StrictMode.setThreadPolicy(policy);
         show();
         lst = (ListView)v.findViewById(R.id.listview);
-        pager=(ViewPager)v.findViewById(R.id.view_pager);
         adp=new CustomAdaptorr(getContext(),rname);
         lst.setAdapter(adp);
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
+                data=rname[position].toString();
+                pager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+           Toast.makeText(getContext(),"data"+data,Toast.LENGTH_LONG).show();
+                pager=(ViewPager)getActivity().findViewById(R.id.view_pager);
+                ViewPagerAdapter adp=new ViewPagerAdapter(getActivity().getSupportFragmentManager());
 
-                String data=rname[position].toString();
+                pager.setAdapter(adp);
                 pager.setCurrentItem(2);
+//                Bundle b=new Bundle();
+//                b.putString("rambo",data);
+//                Intent trial=new Intent(getActivity(),Bustimestop_j.class);
+//
+//                trial.putExtra("ramboji",b);
+
 
 
 

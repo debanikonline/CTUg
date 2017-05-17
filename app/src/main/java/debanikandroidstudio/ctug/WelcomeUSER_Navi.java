@@ -107,11 +107,6 @@ public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationVie
         else if (id == R.id.aboutpc) {
             viewPager.setCurrentItem(10);
         }
-
-//        FragmentManager manager=getSupportFragmentManager();
-//        FragmentTransaction transaction=manager.beginTransaction();
-//        transaction.replace(R.id.pleaseeeeeee,fragment);
-//        transaction.commit();
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
