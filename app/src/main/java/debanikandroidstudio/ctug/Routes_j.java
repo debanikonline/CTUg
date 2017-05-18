@@ -27,6 +27,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.zip.Inflater;
 
 /**
  * Created by debanikmoulick on 03/05/17.
@@ -35,7 +36,7 @@ import java.net.URL;
 public class Routes_j extends android.support.v4.app.Fragment
 {
     ListView lst;
-    String rname[];
+    String rname[],busnumber[];
     String routename[];
     TextView txtu,txtp;
     CustomAdaptorr adp;
@@ -53,16 +54,22 @@ public class Routes_j extends android.support.v4.app.Fragment
         StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(policy);
         show();
+
         lst = (ListView)v.findViewById(R.id.listview);
-        adp=new CustomAdaptorr(getContext(),rname);
+
+        View vs= getActivity().getLayoutInflater().inflate(R.layout.header_list,null);
+        lst.addHeaderView(vs);
+        vs.setEnabled(false);
+
+        adp=new CustomAdaptorr(getContext(),rname,busnumber);
         lst.setAdapter(adp);
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                data=rname[position].toString();
+                data=rname[position-1].toString();
                 pager=(ViewPager)getActivity().findViewById(R.id.view_pager);
-           Toast.makeText(getContext(),"data"+data,Toast.LENGTH_LONG).show();
+           //Toast.makeText(getContext(),"data"+data,Toast.LENGTH_LONG).show();
                 pager=(ViewPager)getActivity().findViewById(R.id.view_pager);
                 ViewPagerAdapter adp=new ViewPagerAdapter(getActivity().getSupportFragmentManager());
 
@@ -91,7 +98,7 @@ public class Routes_j extends android.support.v4.app.Fragment
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setDoOutput(true);
-            Toast.makeText(getContext(), "connection established", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getContext(), "connection established", Toast.LENGTH_SHORT).show();
             InputStream inptstrm = con.getInputStream();
             InputStreamReader inptstrmrdr = new InputStreamReader(inptstrm);
             BufferedReader bfr = new BufferedReader(inptstrmrdr);
@@ -104,10 +111,13 @@ public class Routes_j extends android.support.v4.app.Fragment
                 JSONObject object = null;
                 JSONArray array = new JSONArray(details);
                 rname = new String[array.length()];
+                busnumber=new String[array.length()];
 
                 for (int i = 0; i < array.length(); i++) {
                     object = array.getJSONObject(i);
                     rname[i] = object.getString("routename");
+                    busnumber[i]=object.getString("busno");
+
 
 
 
@@ -125,14 +135,15 @@ public class Routes_j extends android.support.v4.app.Fragment
     public class CustomAdaptorr extends BaseAdapter
     {
         String routenames[];
+        String busnumber[];
 
         Context ctx;
         LayoutInflater lyinfltr;
 
-        public CustomAdaptorr(Context ctx,String[] routenames)
+        public CustomAdaptorr(Context ctx,String[] routenames,String[] busnumber)
         {
             this.routenames = routenames;
-
+            this.busnumber=busnumber;
             this.ctx = ctx;
             lyinfltr=(LayoutInflater.from(ctx));
         }
@@ -156,8 +167,9 @@ public class Routes_j extends android.support.v4.app.Fragment
         public View getView(int position, View convertView, ViewGroup parent) {
             convertView=lyinfltr.inflate(R.layout.content_list_textviews,null);
             txtu=(TextView)convertView.findViewById(R.id.item1);
-
+            txtp=(TextView)convertView.findViewById(R.id.item2);
             txtu.setText(""+routenames[position]);
+            txtp.setText(""+busnumber[position]);
 
             return convertView;
         }
