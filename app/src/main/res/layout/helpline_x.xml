@@ -3,4 +3,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/helplinelistview"
+        android:dividerHeight="1dp"
+        android:layout_weight="1"
+        android:divider="@color/light_green">
+
+    </ListView>
 </LinearLayout>
