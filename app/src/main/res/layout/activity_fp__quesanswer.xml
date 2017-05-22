@@ -9,7 +9,7 @@
     tools:context="debanikandroidstudio.ctug.FP_Quesanswer">
 
     <TextView
-        android:id="@+id/fp_2_question"
+        android:id="@+id/fp_2_question_space"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="46dp"
@@ -17,7 +17,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/fp_2_answer"
+        android:id="@+id/fp_2_answer_space"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginTop="22dp"
@@ -27,8 +27,8 @@
         android:textColor="#ffffff"
         android:inputType="textPersonName"
         android:hint="Answer Here"
-        android:layout_below="@+id/fp_2_question"
-        android:layout_alignStart="@+id/fp_2_question" />
+        android:layout_below="@+id/fp_2_question_space"
+        android:layout_alignStart="@+id/fp_2_question_space" />
 
     <TextView
         android:id="@+id/textView22"
@@ -49,17 +49,16 @@
 
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:text="ahh... how could you??" />
+        />
     <Button
-        android:id="@+id/fp_2_button"
+        android:id="@+id/fp_2_button_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
-        android:background="@drawable/fullborder"
-        android:textColor="#FFFFFF"
+
         android:layout_marginBottom="74dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/fp_2_answer"
-        android:layout_alignEnd="@+id/fp_2_answer" />
+        android:layout_alignStart="@+id/fp_2_answer_space"
+        android:layout_alignEnd="@+id/fp_2_answer_space" />
 
 </RelativeLayout>

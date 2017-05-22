@@ -24,7 +24,7 @@
         android:layout_marginEnd="61dp" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/fp_3_confirmpassword"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:padding="27px"
@@ -42,9 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
-        android:background="@drawable/fullborder"
-        android:textColor="#FFFFFF"
-        android:layout_below="@+id/editText2"
+
+        android:layout_below="@+id/fp_3_confirmpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp" />
 

@@ -13,8 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
-        android:background="@drawable/fullborder"
-        android:textColor="#FFFFFF"
+
+
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="176dp" />
@@ -54,4 +54,23 @@
         android:layout_above="@+id/fp_1_username"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="9dp" />
+
+    <ImageButton
+        android:id="@+id/imageButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/greentick"
+
+        android:layout_below="@+id/textView23"
+        android:layout_alignEnd="@+id/fp_1_username"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:id="@+id/signup_from_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/fp_1_button"
+        android:layout_below="@+id/fp_1_username"
+        android:layout_marginTop="57dp"
+        android:text="Signup" />
 </RelativeLayout>
