@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FP_Enterusername">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".ViewDetails" />
         <activity android:name=".AdminEditor" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".FP_Enterusername" />
         <activity android:name=".WelcomeADMIN" />
         <activity android:name=".AdminOtherDatabaseSelectionView" />
         <activity android:name=".Login_PageUser" />
