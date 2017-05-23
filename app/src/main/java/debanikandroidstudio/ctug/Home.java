@@ -1,6 +1,7 @@
 package debanikandroidstudio.ctug;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -28,6 +30,7 @@ import java.util.List;
 
 public class Home extends android.support.v4.app.Fragment
 {
+    Button search;
     AutoCompleteTextView from,to;
     String hosturl="http://192.168.43.113/CTU/selectroute_AUTO.php";
     List routes;
@@ -39,9 +42,10 @@ public class Home extends android.support.v4.app.Fragment
         View v1=inflater.inflate(R.layout.home,container,false);
         StrictMode.ThreadPolicy threadPolicy=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(threadPolicy);
+        search=(Button)v1.findViewById(R.id.search_buttonID);
        // from=(AutoCompleteTextView)getView().findViewById(R.id.busfrom_textID_AUTO);
             from=(AutoCompleteTextView)v1.findViewById(R.id.busfrom_textID_AUTO);
-            to=(AutoCompleteTextView)v1.findViewById(R.id.busto_textID_AUTO);
+
             routes=selectroute();
 
             ArrayList lst=new ArrayList();
@@ -52,14 +56,25 @@ public class Home extends android.support.v4.app.Fragment
         from.setAdapter(adp);
 
         from.setThreshold(1);
-        to.setAdapter(adp);
-        to.setThreshold(1);
 
 
 
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                String a=from.getText().toString();
+
+                Intent i=new Intent(getContext(),Search_Result_Activity.class);
+                i.putExtra("a",a);
+
+                startActivity(i);
+            }
+        });
         return v1;
 
     }
+
     public List<String> selectroute()
     {
         String line="";

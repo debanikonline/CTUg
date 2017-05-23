@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity
     Typeface tf;
     Drawable shape;
     TextView forgot;
+    //String a,b;
 
 
     @Override
@@ -55,6 +56,13 @@ public class Login extends AppCompatActivity
         pd=pass.getText().toString();
         signup=(TextView)findViewById(R.id.signup);
         fb=(Button)findViewById(R.id.fbLogin);
+        ////-------
+//        a=getIntent().getStringExtra("a");
+//        b=getIntent().getStringExtra("b");
+
+
+
+        ////---------
         language=(Spinner)findViewById(R.id.spinlang);
         logo=(TextView)findViewById(R.id.logo);
         login=(Button)findViewById(R.id.login);
@@ -220,6 +228,7 @@ public class Login extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Toast.makeText(Login.this, "Will be implemented in next version, thanks for your support", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(Login.this, "a--"+a+"b--"+b, Toast.LENGTH_SHORT).show();
             }
         });
         signup.setOnClickListener(new View.OnClickListener() {

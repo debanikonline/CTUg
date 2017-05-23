@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/animationlist">
 
     <TextView
         android:id="@+id/textView12"
@@ -22,52 +23,25 @@
         android:textSize="18sp"
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:layout_marginTop="35dp"
 
-        android:layout_below="@+id/busto_textID_AUTO"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginTop="88dp"
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/swap_80"
-
-
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="20dp"
         android:layout_below="@+id/busfrom_textID_AUTO"
-        android:layout_centerHorizontal="true" />
-
-    <AutoCompleteTextView
-        android:id="@+id/busto_textID_AUTO"
-        android:layout_width="300dp"
-
-        android:layout_height="40dp"
-        android:layout_marginTop="18dp"
-        android:background="@drawable/boundaries"
-        android:ems="10"
-        android:padding="10px"
-        android:inputType="textPersonName"
-        android:hint="Bus To"
-        android:layout_below="@+id/imageView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_toEndOf="@+id/textView12" />
 
     <AutoCompleteTextView
         android:id="@+id/busfrom_textID_AUTO"
         android:layout_width="300dp"
         android:layout_height="40dp"
-        android:background="@drawable/boundaries"
+
         android:ems="10"
         android:padding="10px"
         android:inputType="textPersonName"
         android:hint="Bus From"
         android:layout_below="@+id/textView12"
-        android:layout_alignStart="@+id/busto_textID_AUTO" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="141dp" />
 
 
 

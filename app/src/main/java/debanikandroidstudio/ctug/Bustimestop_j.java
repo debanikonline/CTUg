@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,9 +69,9 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
             lst.setAdapter(adp);
        Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
         }
-
         return v;
     }
+
     public void routeid(String routename)
     {
         String line="";
@@ -227,6 +228,9 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
             // Toast.makeText(ctx, "bbbb--"+busstopname[position], Toast.LENGTH_SHORT).show();
             return convertView;
         }
+
     }
+
+
 }
 
