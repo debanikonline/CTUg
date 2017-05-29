@@ -13,8 +13,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
-
-
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="176dp" />
@@ -60,7 +58,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/greentick"
-
         android:layout_below="@+id/textView23"
         android:layout_alignEnd="@+id/fp_1_username"
         android:layout_marginTop="60dp" />

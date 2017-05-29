@@ -59,6 +59,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         {
             return new About_j();
         }
+
         else return null;
     }
 

@@ -254,4 +254,10 @@ public class Login extends AppCompatActivity
         if (animationDrawable != null && animationDrawable.isRunning())
             animationDrawable.stop();
     }
+
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, "No back press ", Toast.LENGTH_SHORT).show();
+    }
 }

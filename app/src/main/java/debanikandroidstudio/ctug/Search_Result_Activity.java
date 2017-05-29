@@ -2,6 +2,7 @@ package debanikandroidstudio.ctug;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -46,8 +47,20 @@ public class Search_Result_Activity extends AppCompatActivity
 
         lst=(ListView)findViewById(R.id.search_busnumber_list_ID);
         load(a);
-        ArrayAdapter adp=new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,listdetails);
-        lst.setAdapter(adp);
+        if (listdetails==null)
+        {
+            Toast.makeText(this, "Entered data doesnot match any entries in the database", Toast.LENGTH_SHORT).show();
+            Intent i=new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
+            startActivity(i);
+        }
+        else{
+            //Toast.makeText(this, "in else", Toast.LENGTH_SHORT).show();
+              ArrayAdapter adp=new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,listdetails);
+              lst.setAdapter(adp);
+
+        }
+//        ArrayAdapter adp=new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,listdetails);
+  //      lst.setAdapter(adp);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,8 +69,9 @@ public class Search_Result_Activity extends AppCompatActivity
                 startActivity(i);
             }
         });
-        msg.setText("These Busses will lead you to ->"+a+"\n"+" Select a bus to know the stopage details!");
-        msg.setTypeface(null,Typeface.ITALIC);
+        msg.setText("These Busses will lead you to ->\n"+a+"\n"+" Select a bus to know the stopage details!");
+        ty=Typeface.createFromAsset(getAssets(),"fonts/debu.ttf");
+        msg.setTypeface(ty);
         lst.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -116,4 +130,9 @@ public class Search_Result_Activity extends AppCompatActivity
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent i =new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
+        startActivity(i);
+    }
 }

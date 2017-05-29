@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/animationlist"
+    android:background="#D6D6D6"
     android:id="@+id/fp3"
     tools:context="debanikandroidstudio.ctug.FP_3_recovery">
 
@@ -19,6 +19,7 @@
         android:textColorHint="#ffffff"
         android:background="@drawable/fullborder"
         android:hint="Enter Password"
+
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="61dp" />
@@ -39,10 +40,10 @@
 
     <Button
         android:id="@+id/fp_3_button"
-        android:layout_width="wrap_content"
+        android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:text="NEXT"
-
+        android:background="#FF6666"
         android:layout_below="@+id/fp_3_confirmpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp" />

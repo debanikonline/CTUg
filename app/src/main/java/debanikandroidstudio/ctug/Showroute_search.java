@@ -1,6 +1,7 @@
 package debanikandroidstudio.ctug;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +33,7 @@ public class Showroute_search extends AppCompatActivity {
     TextView text;
     String routes[];
     Button final_back;
+    Typeface ty;
     String hosturl2="http://192.168.43.113/CTU/finalshowroute.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +44,8 @@ public class Showroute_search extends AppCompatActivity {
 
         numb=getIntent().getStringExtra("selected");
         text.setText("Following are the details for Bus #"+numb);
+        ty=Typeface.createFromAsset(getAssets(),"fonts/debu.ttf");
+        text.setTypeface(ty);
         //Toast.makeText(this, "le"+numb, Toast.LENGTH_SHORT).show();
         lst=(ListView)findViewById(R.id.showroute__list_layout_final);
         load(numb);
@@ -94,5 +98,12 @@ public class Showroute_search extends AppCompatActivity {
         {
 
         }
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent i =new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
+        startActivity(i);
     }
 }

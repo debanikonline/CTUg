@@ -1,21 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <RatingBar
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rating1"/>
-        </LinearLayout>
+    android:layout_height="match_parent"
+    android:background="#D6D6D6">
 
 
 
 
-        </ScrollView>
+    <ImageButton
+        android:id="@+id/ratebtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/rateus"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/imageButton10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratebtn"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="106dp"
+        app:srcCompat="@mipmap/fb90" />
+
 </RelativeLayout>

@@ -43,24 +43,53 @@ public class Feedback_j extends Fragment
         fmail=email.getText().toString();
         fphone=phone.getText().toString();
         ffeed=feedback.getText().toString();
-        submit.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
-            {
-                fname=name.getText().toString();
-                fmail=email.getText().toString();
-                fphone=phone.getText().toString();
-                ffeed=feedback.getText().toString();
-                save();
-                Toast.makeText(getContext(), "Thanks for your feedback.", Toast.LENGTH_SHORT).show();
-                name.setText("");
-                email.setText("");
-                phone.setText("");
-                feedback.setText("");
-                Toast.makeText(getContext(), ""+fname+fmail+fphone+ffeed, Toast.LENGTH_SHORT).show();
-            }
-        });
+
+
+            submit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v)
+                {
+
+                    fname = name.getText().toString();
+                    fmail = email.getText().toString();
+                    fphone = phone.getText().toString();
+                    ffeed = feedback.getText().toString();
+                    if(fphone.length()<10||fphone.length()>10)
+                    {
+                        Toast.makeText(getContext(), "Min 10 digits in phone", Toast.LENGTH_SHORT).show();
+
+                    }
+                    else
+                    {
+                        if(fmail.isEmpty())
+                        {
+                            Toast.makeText(getContext(), "We need an email to get in touch with you", Toast.LENGTH_SHORT).show();
+                        }
+
+                        else
+                        {
+                            if (fmail.contains("@")&&fmail.contains("."))
+                            {
+                                save();
+                                Toast.makeText(getContext(), "Thanks for your feedback.", Toast.LENGTH_SHORT).show();
+                                name.setText("");
+                                email.setText("");
+                                phone.setText("");
+                                feedback.setText("");
+                                Toast.makeText(getContext(), "" + fname + fmail + fphone + ffeed, Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(getContext(), "Enter proper emailid", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
+                    }
+
+
+                }
+            });
+
 
         return v1;
     }

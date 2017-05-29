@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#E8FEFF"
+    android:background="#D6D6D6"
     tools:context="debanikandroidstudio.ctug.AdminEditor">
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/admineditorpassword"
         android:layout_marginTop="65dp"
-        android:background="#E8FEFF"
+        android:background="#FF6666"
         android:text="Update Password" />
 
     <Button
@@ -55,15 +55,10 @@
         android:layout_alignStart="@+id/admineditorEDITbutton"
         android:layout_below="@+id/admineditorEDITbutton"
         android:layout_marginTop="17dp"
-        android:background="#E8FEFF"
+        android:background="#FF6666"
+
+
+
         android:text="Delete Entry" />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:text="admin_editor" />
 </RelativeLayout>

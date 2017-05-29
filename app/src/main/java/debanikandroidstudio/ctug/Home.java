@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,6 +46,7 @@ public class Home extends android.support.v4.app.Fragment
         StrictMode.ThreadPolicy threadPolicy=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(threadPolicy);
         search=(Button)v1.findViewById(R.id.search_buttonID);
+        search.setEnabled(false);
        // from=(AutoCompleteTextView)getView().findViewById(R.id.busfrom_textID_AUTO);
             from=(AutoCompleteTextView)v1.findViewById(R.id.busfrom_textID_AUTO);
 
@@ -57,20 +61,49 @@ public class Home extends android.support.v4.app.Fragment
 
         from.setThreshold(1);
 
-
-
-        search.setOnClickListener(new View.OnClickListener() {
+        from.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v)
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
             {
-                String a=from.getText().toString();
+                search.setEnabled(false);
 
-                Intent i=new Intent(getContext(),Search_Result_Activity.class);
-                i.putExtra("a",a);
+            }
 
-                startActivity(i);
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                if (s.length()<=0)
+                {
+                    search.setEnabled(false);
+                }
+                else if(s.length()>0)
+                {
+                    search.setEnabled(true);
+                    search.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v)
+                        {
+
+                            String a=from.getText().toString();
+
+                            Intent i=new Intent(getContext(),Search_Result_Activity.class);
+                            i.putExtra("a",a);
+                            Toast.makeText(getContext(), "transfer- "+a, Toast.LENGTH_SHORT).show();
+                            startActivity(i);
+                        }
+                    });
+
+                }
+
             }
         });
+
+
         return v1;
 
     }
@@ -123,4 +156,5 @@ public class Home extends android.support.v4.app.Fragment
         }
         return list;
     }
+
 }

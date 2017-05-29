@@ -16,10 +16,13 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark"
         app:titleTextColor="@android:color/white" />
 
+
+
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,10 +38,12 @@
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
+
             <android.support.v4.view.ViewPager
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
         </LinearLayout>
 
 
@@ -49,6 +54,7 @@
             android:layout_gravity="start"
             android:fitsSystemWindows="true"
             app:menu="@menu/drawer_menu" />
+
 
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

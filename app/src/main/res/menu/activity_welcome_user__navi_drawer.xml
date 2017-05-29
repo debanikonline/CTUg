@@ -27,7 +27,7 @@
     <item
         android:id="@+id/routemaps"
         android:icon="@android:drawable/ic_menu_info_details"
-        android:title="Route Maps" />
+        android:title="Map of CHD" />
     <item
         android:id="@+id/refer"
         android:icon="@android:drawable/ic_menu_info_details"
@@ -40,4 +40,5 @@
         android:id="@+id/about"
         android:icon="@android:drawable/ic_menu_info_details"
         android:title="About" />
+
 </menu>

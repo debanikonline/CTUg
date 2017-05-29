@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6D6D6"
     tools:context="debanikandroidstudio.ctug.Showroute_search">
 
     <LinearLayout
@@ -30,9 +31,10 @@
     <TextView
         android:id="@+id/textView_final"
         android:layout_width="match_parent"
-        android:layout_height="50sp"
+        android:layout_height="match_parent"
         android:text="Here are the route details:-"
         android:gravity="center"
+        android:textSize="30sp"
         android:layout_above="@+id/final_linear"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="18dp" />

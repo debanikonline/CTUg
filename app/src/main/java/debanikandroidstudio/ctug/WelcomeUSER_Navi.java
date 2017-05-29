@@ -1,4 +1,5 @@
 package debanikandroidstudio.ctug;
+import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -11,10 +12,12 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
+{
 
     private ViewPager viewPager;
     private DrawerLayout drawer;
@@ -107,6 +110,9 @@ public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationVie
         else if (id == R.id.aboutpc) {
             viewPager.setCurrentItem(10);
         }
+        else if (id == R.id.logoutpc) {
+            viewPager.setCurrentItem(11);
+        }
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -124,4 +130,25 @@ public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationVie
             super.onBackPressed();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.welcome_user__navi,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.action_Logout:
+            {
+                Intent i=new Intent(this,Login.class);
+                startActivity(i);
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 }

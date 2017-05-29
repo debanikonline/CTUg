@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#D6D6D6">
 
 
     <EditText
@@ -54,11 +55,14 @@
 
     <Button
         android:id="@+id/feedback_button"
-        android:layout_width="wrap_content"
+        android:layout_width="200sp"
         android:layout_height="wrap_content"
+
+        android:background="#e45664"
+
+        android:text="SUBMIT"
         android:layout_below="@+id/feedback_feedback"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="10dp" />
 
-        android:text="Button" />
 </RelativeLayout>
