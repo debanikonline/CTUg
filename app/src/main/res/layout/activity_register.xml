@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_register"
     android:layout_width="match_parent"
@@ -8,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#E8FEFF"
+    android:background="#D6D6D6"
     tools:context="debanikandroidstudio.ctug.RegisterActivity">
 
     <EditText
@@ -16,7 +17,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:hint="Enter name [username]"
+        android:hint="Enter name [Fingerprint]"
         android:layout_marginTop="43dp"
         android:id="@+id/registername"
         android:layout_alignParentTop="true"
@@ -38,26 +39,24 @@
     <Button
         android:id="@+id/registerbutton"
 
-        android:layout_width="150dp"
-        android:layout_height="60dp"
+        android:layout_width="150sp"
+        android:layout_height="wrap_content"
+
+
+        android:text="Enter in records"
+
+
+        android:layout_below="@+id/registerpassword"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp" />
 
-        android:layout_centerVertical="true"
-        android:background="@drawable/buttonshape"
-        android:shadowColor="#A8A8A8"
-        android:shadowDx="0"
-        android:shadowDy="0"
-        android:shadowRadius="5"
-        android:text="Button"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp" />
-
-    <TextView
-        android:id="@+id/textView7"
+    <ImageButton
+        android:id="@+id/imageButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/registername"
-        android:text="activity_register" />
+        android:layout_marginTop="69dp"
+        app:srcCompat="@drawable/adminlogo"
+        android:layout_below="@+id/registerbutton"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

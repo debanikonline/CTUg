@@ -9,18 +9,19 @@
 
     <Button
         android:id="@+id/newadminentryButtonID"
-        android:layout_width="150sp"
-        android:layout_height="100sp"
+        android:layout_width="170sp"
+        android:layout_height="150sp"
         android:background="#2188cd"
         android:text="New Admin Entry "
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="78dp" />
+
+        android:layout_marginTop="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/viewAdminDatabaseID"
-        android:layout_width="150sp"
-        android:layout_height="100sp"
+        android:layout_width="170sp"
+        android:layout_height="150sp"
         android:background="#2188cd"
         android:text="View Admin Database"
         android:layout_below="@+id/newadminentryButtonID"
@@ -29,24 +30,17 @@
 
     <Button
         android:id="@+id/insertSTOPbuttonID"
-        android:layout_width="150sp"
-        android:layout_height="100sp"
+        android:layout_width="170sp"
+        android:layout_height="150sp"
         android:background="#2188cd"
-        android:text="Enter Bus Stopage Detail"
+        android:text="Enter Bus Stoppage Detail"
         android:layout_alignTop="@+id/newadminentryButtonID"
         android:layout_alignParentEnd="true" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:text="welcome_admin" />
-
     <Button
         android:id="@+id/newROUTE_buttonID"
-        android:layout_width="150sp"
-        android:layout_height="100sp"
+        android:layout_width="170sp"
+        android:layout_height="150sp"
         android:background="#2188cd"
         android:text="Insert New Bus Route"
 
@@ -56,8 +50,8 @@
 
     <Button
         android:id="@+id/allotbus_buttonID"
-        android:layout_width="150sp"
-        android:layout_height="100sp"
+        android:layout_width="170sp"
+        android:layout_height="150sp"
         android:text="Allot Bus to Route"
         android:background="#2188cd"
         android:layout_alignTop="@+id/newROUTE_buttonID"
@@ -67,9 +61,13 @@
         android:id="@+id/textView"
         android:layout_width="150sp"
         android:layout_height="100sp"
-
+        android:text="Click any tile to alter database"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textSize="25sp"
         android:background="#e1c546"
-        android:layout_alignTop="@+id/viewAdminDatabaseID"
-        android:layout_alignStart="@+id/allotbus_buttonID" />
+        android:layout_above="@+id/newROUTE_buttonID"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="18dp" />
 
 </RelativeLayout>

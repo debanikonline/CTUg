@@ -55,6 +55,8 @@ public class ViewDetails extends AppCompatActivity
         StrictMode.setThreadPolicy(threadPolicy);
 
             lst = (ListView) findViewById(R.id.mylist);
+        View vs= getLayoutInflater().inflate(R.layout.admin_header_list,null);
+        lst.addHeaderView(vs);
             show();
 
             adp = new CustomAdaptorr(getApplicationContext(), u, p);
@@ -118,7 +120,7 @@ public class ViewDetails extends AppCompatActivity
             HttpURLConnection con=(HttpURLConnection)url.openConnection();
             con.setRequestMethod("POST");
             con.setDoOutput(true);
-            Toast.makeText(getApplicationContext(),"connection established",Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(),"connection established",Toast.LENGTH_SHORT).show();
             InputStream inptstrm=con.getInputStream();
             InputStreamReader inptstrmrdr=new InputStreamReader(inptstrm);
             BufferedReader bfr=new BufferedReader(inptstrmrdr);

@@ -1,6 +1,7 @@
 package debanikandroidstudio.ctug;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,6 +62,8 @@ public class FP_Enterusername extends AppCompatActivity
             public void beforeTextChanged(CharSequence s, int start, int count, int after)
             {
                 enter.setEnabled(false);
+                enter.setBackgroundColor(Color.TRANSPARENT);
+                enter.setTextColor(Color.WHITE);
             }
 
             @Override
@@ -83,10 +86,14 @@ public class FP_Enterusername extends AppCompatActivity
                 if(s.length()==0)
                 {
                     enter.setEnabled(false);
+                    enter.setBackgroundColor(Color.TRANSPARENT);
+                    enter.setTextColor(Color.WHITE);
                 }
                 else if(s.length()>0)
                 {
                     enter.setEnabled(true);
+                    enter.setBackgroundColor(Color.WHITE);
+                    enter.setTextColor(Color.BLACK);
                 }
 
             }
@@ -97,7 +104,7 @@ public class FP_Enterusername extends AppCompatActivity
             {
                 username=edit.getText().toString();
 
-                    Toast.makeText(FP_Enterusername.this, "Searching"+username, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(FP_Enterusername.this, "Searching"+username, Toast.LENGTH_SHORT).show();
                     check(username);
                // Toast.makeText(FP_Enterusername.this, "------o or 1?--"+status, Toast.LENGTH_SHORT).show();
                 if(status.equals("0"))
@@ -105,10 +112,11 @@ public class FP_Enterusername extends AppCompatActivity
                     Toast.makeText(FP_Enterusername.this, "Entered username doesn't exist, Please signup instead!", Toast.LENGTH_SHORT).show();
                     img.setVisibility(View.INVISIBLE);
                     signup.setVisibility(View.VISIBLE);
+                    signup.setBackgroundColor(Color.WHITE);
                 }
                 else if(status.equals("1"))
                 {
-                    Toast.makeText(FP_Enterusername.this, "YESSSS", Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(FP_Enterusername.this, "YESSSS", Toast.LENGTH_SHORT).show();
                     img.setVisibility(View.VISIBLE);
                     signup.setVisibility(View.INVISIBLE);
 

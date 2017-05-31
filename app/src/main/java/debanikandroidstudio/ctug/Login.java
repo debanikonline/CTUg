@@ -1,12 +1,16 @@
 package debanikandroidstudio.ctug;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.StrictMode;
+import android.provider.Settings;
 import android.support.annotation.DrawableRes;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -21,6 +25,17 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,14 +44,18 @@ public class Login extends AppCompatActivity
     EditText name, pass;
     Button login, fb;
     String nd,pd;
+    int access;
+
     RelativeLayout relativeLayout;
     AnimationDrawable animationDrawable;
     Spinner language;
     TextView logo, signup;
     int flag=0,flag2=0;
     Typeface tf;
+    String hosturl = "http://192.168.43.113/CTU/checkup.php";
     Drawable shape;
     TextView forgot;
+    int c=0;
     //String a,b;
 
 
@@ -44,6 +63,8 @@ public class Login extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        StrictMode.ThreadPolicy policy=new StrictMode.ThreadPolicy.Builder().build();
+        StrictMode.setThreadPolicy(policy);
         shape=getResources().getDrawable(R.drawable.fullborder);
         relativeLayout=(RelativeLayout)findViewById(R.id.loginback);
         animationDrawable = (AnimationDrawable) relativeLayout.getBackground();
@@ -212,11 +233,28 @@ public class Login extends AppCompatActivity
         });
         login.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent welcomeuser=new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
-                startActivity(welcomeuser);
+            public void onClick(View v)
+            {
+                check();
+                if(access==1)
+                {
+                    Intent welcomeuser=new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
+                    startActivity(welcomeuser);
+                    //Toast.makeText(Login.this, "yes 1", Toast.LENGTH_SHORT).show();
+                }
+                else if(access==0)
+                {
+                    dbox();
+                    //Toast.makeText(Login.this, "Username or Password incorrect..!!", Toast.LENGTH_SHORT).show();
+                }
+                //check login details , start codeing from here.!!
+               // Intent welcomeuser=new Intent(getApplicationContext(),WelcomeUSER_Navi.class);
+                //startActivity(welcomeuser);
             }
         });
+
+
+
         forgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -258,6 +296,92 @@ public class Login extends AppCompatActivity
     @Override
     public void onBackPressed() {
 
-        Toast.makeText(this, "No back press ", Toast.LENGTH_SHORT).show();
+
+
+
+        Toast.makeText(this, "For security reason back press is disabled , close the app manually, Thanks", Toast.LENGTH_SHORT).show();
+
     }
+    public void check()
+    {
+        String un=name.getText().toString();
+        String up=pass.getText().toString();
+        String line="";
+        StringBuilder bob=new StringBuilder();
+       // Toast.makeText(this, "u---"+un+"p-----"+up, Toast.LENGTH_SHORT).show();
+
+        try
+        {
+            URL u=new URL(hosturl);
+            HttpURLConnection con=(HttpURLConnection)u.openConnection();
+            con.setRequestMethod("POST");
+            con.setDoOutput(true);
+            OutputStream os=con.getOutputStream();
+            OutputStreamWriter osw=new OutputStreamWriter(os,"UTF-8");
+            BufferedWriter bw=new BufferedWriter(osw);
+            String query= URLEncoder.encode("uu","UTF-8")+"="+URLEncoder.encode(un,"UTF-8")+"&"+
+                    URLEncoder.encode("pp","UTF-8")+"="+URLEncoder.encode(up,"UTF-8");
+            bw.write(query);
+            bw.flush();
+            bw.close();
+            InputStream is=con.getInputStream();
+            con.connect();
+            InputStreamReader isr=new InputStreamReader(is);
+            BufferedReader br=new BufferedReader(isr);
+            if(br!=null)
+            {
+                while((line=br.readLine())!=null)
+                {
+                    bob.append(line+"\n");
+                }
+                String data=bob.toString();
+                JSONObject object=new JSONObject(data);
+                access=object.getInt("code");
+                //Toast.makeText(this, "flag code--"+access, Toast.LENGTH_SHORT).show();
+
+
+            }
+          //  Toast.makeText(this, "flag code--"+access, Toast.LENGTH_SHORT).show();
+
+
+
+
+
+
+        }
+        catch (Exception e)
+        {
+            Toast.makeText(this, ""+e, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+    public void dbox()
+    {
+        AlertDialog.Builder box= new AlertDialog.Builder(this);
+        box.setTitle("ERROR");
+        box.setMessage("Please enter valid Username and Password.");
+        box.setCancelable(true);
+        box.setNegativeButton("Try again", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                dialog.cancel();
+
+
+            }
+        });
+        box.setPositiveButton("Forgot Password?", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which)
+            {
+                Intent i=new Intent(getApplicationContext(),FP_Enterusername.class);
+                startActivity(i);
+
+            }
+        });
+        AlertDialog dialog=box.create();
+        dialog.show();
+    }
+
+
 }

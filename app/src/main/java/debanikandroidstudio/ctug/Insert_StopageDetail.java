@@ -1,8 +1,12 @@
 package debanikandroidstudio.ctug;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -29,12 +33,14 @@ import java.util.List;
 
 public class Insert_StopageDetail extends AppCompatActivity
 {
-    TextView t;
+    TextView t,select;
     Spinner stopspin;
     EditText enterstop,entertime;
     Button save;
     List routelist;
     int routeid;
+    Typeface ty;
+    int flag=0,flag2=0;
     String selectedroute;
     String hosturl="http://192.168.43.113/CTU/selectroute.php";
     String hosturl1="http://192.168.43.113/CTU/selectrouteid.php";
@@ -49,9 +55,12 @@ public class Insert_StopageDetail extends AppCompatActivity
         t=(TextView)findViewById(R.id.trytext);
         stopspin=(Spinner)findViewById(R.id.select_spinner);
         enterstop=(EditText)findViewById(R.id.stopagenameID);
+        select=(TextView)findViewById(R.id.selectstopage_text);
+        ty=Typeface.createFromAsset(getAssets(),"fonts/debu.ttf");
+        select.setTypeface(ty);
         entertime=(EditText)findViewById(R.id.stopagetimeID);
         routelist=selectroute();
-        Toast.makeText(getApplicationContext(),""+routelist,Toast.LENGTH_LONG).show();
+       // Toast.makeText(getApplicationContext(),""+routelist,Toast.LENGTH_LONG).show();
         ArrayAdapter<String> adp=new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,routelist);
         adp.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         stopspin.setAdapter(adp);
@@ -69,6 +78,111 @@ public class Insert_StopageDetail extends AppCompatActivity
             }
         });
         save=(Button)findViewById(R.id.enterstopagebuttonID);
+        save.setEnabled(false);
+
+        enterstop.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+                flag=0;
+                save.setEnabled(false);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                if(s.length()>0)
+                {
+                    flag=1;
+                    if((flag==1)&&(flag2==1))
+                    {
+                        save.setEnabled(true);
+                        save.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                else if (s.length()==0)
+                {
+                    flag=0;
+                    save.setEnabled(false);
+                    save.setBackgroundColor(Color.TRANSPARENT);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                if(s.length()>0)
+                {
+                    flag=1;
+                    if((flag==1)&&(flag2==1))
+                    {
+                        save.setEnabled(true);
+                        save.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                else if (s.length()==0)
+                {
+                    flag=0;
+                    save.setEnabled(false);
+                    save.setBackgroundColor(Color.TRANSPARENT);
+                }
+
+            }
+        });
+
+        entertime.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+                flag2=0;
+                save.setEnabled(false);
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                if(s.length()>0)
+                {
+                    flag2=1;
+                    if((flag2==1)&&(flag==1))
+                    {
+                        save.setEnabled(true);
+                        save.setBackgroundColor(Color.WHITE);
+                    }
+                }
+                else if (s.length()==0)
+                {
+                    flag2=0;
+                    save.setEnabled(false);
+                    save.setBackgroundColor(Color.TRANSPARENT);
+                }
+
+            }
+
+
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                if(s.length()>0)
+            {
+                flag2=1;
+                if((flag2==1)&&(flag==1))
+                {
+                    save.setEnabled(true);
+                    save.setBackgroundColor(Color.WHITE);
+                }
+            }
+            else if (s.length()==0)
+            {
+                flag2=0;
+                save.setEnabled(false);
+                save.setBackgroundColor(Color.TRANSPARENT);
+            }
+
+            }
+        });
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -91,7 +205,7 @@ public class Insert_StopageDetail extends AppCompatActivity
         {
             URL url=new URL(hosturl);
             HttpURLConnection connection=(HttpURLConnection)url.openConnection();
-            Toast.makeText(getApplicationContext(),"connection ok",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"connection ok",Toast.LENGTH_LONG).show();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
             InputStream is=connection.getInputStream();
@@ -106,7 +220,7 @@ public class Insert_StopageDetail extends AppCompatActivity
                 }
             }
             String data=stringBuilder.toString();
-            Toast.makeText(getApplicationContext(),""+data,Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),""+data,Toast.LENGTH_LONG).show();
             JSONArray jsonarray=new JSONArray(data);
             JSONObject jsonobject=null;
             //routearray=new String[jsonarray.length()];
@@ -158,10 +272,10 @@ public class Insert_StopageDetail extends AppCompatActivity
                 }
             }
             String data1=stringBuilder1.toString();
-            Toast.makeText(getApplicationContext(),data1,Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getApplicationContext(),data1,Toast.LENGTH_SHORT).show();
             JSONObject object1=new JSONObject(data1);
             routeid=object1.getInt("routeid");
-            Toast.makeText(this, "this is the route id : " + routeid, Toast.LENGTH_LONG).show();
+          //  Toast.makeText(this, "this is the route id : " + routeid, Toast.LENGTH_LONG).show();
 
         }
         catch (Exception e)

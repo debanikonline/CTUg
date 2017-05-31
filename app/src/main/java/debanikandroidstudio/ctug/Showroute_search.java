@@ -48,6 +48,7 @@ public class Showroute_search extends AppCompatActivity {
         text.setTypeface(ty);
         //Toast.makeText(this, "le"+numb, Toast.LENGTH_SHORT).show();
         lst=(ListView)findViewById(R.id.showroute__list_layout_final);
+
         load(numb);
         //Toast.makeText(this, "ff"+routes[0]+" "+routes[1], Toast.LENGTH_SHORT).show();
         ArrayAdapter adp=new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,routes);

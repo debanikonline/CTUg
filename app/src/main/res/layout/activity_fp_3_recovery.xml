@@ -16,9 +16,9 @@
         android:ems="10"
         android:padding="27px"
         android:inputType="textPersonName"
-        android:textColorHint="#ffffff"
+
         android:background="@drawable/fullborder"
-        android:hint="Enter Password"
+        android:hint="Enter new Password"
 
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -34,16 +34,16 @@
         android:layout_marginTop="40dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColorHint="#ffffff"
+
         android:background="@drawable/fullborder"
-        android:hint="Confirm Password" />
+        android:hint="Confirm new Password" />
 
     <Button
         android:id="@+id/fp_3_button"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
-        android:text="NEXT"
-        android:background="#FF6666"
+        android:text="Submit"
+
         android:layout_below="@+id/fp_3_confirmpassword"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp" />

@@ -55,9 +55,11 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
         StrictMode.ThreadPolicy poi=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(poi);
         lst=(ListView)v.findViewById(R.id.stoplist);
+        View v1=getActivity().getLayoutInflater().inflate(R.layout.busstop_header_list,null);
+        lst.addHeaderView(v1);
         if(routename.equals(""))
         {
-            Toast.makeText(getContext(), "not route selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please select a route to see details..!!", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -67,7 +69,7 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
             //Toast.makeText(this, "stop name---"+stopname[4]+"stop time ----"+stoptime[4], Toast.LENGTH_SHORT).show();
             adp=new Custommaan(getContext(),stopname,stoptime);
             lst.setAdapter(adp);
-       Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
+      // Toast.makeText(getContext(), "rnameeee-"+routename, Toast.LENGTH_SHORT).show();
         }
         return v;
     }
@@ -101,7 +103,7 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
 
             }
             String data=st.toString();
-           Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
+          // Toast.makeText(getContext(), data, Toast.LENGTH_SHORT).show();
             JSONObject object=new JSONObject(data);
 
             rid=object.getInt("routeid");
@@ -221,7 +223,6 @@ public class Bustimestop_j extends android.support.v4.app.Fragment
             convertView=lay.inflate(R.layout.content_list_stopname_stoptime,null);
             TextView name=(TextView)convertView.findViewById(R.id.busstopnameTEXTVIEW);
             TextView time=(TextView)convertView.findViewById(R.id.busstoptimeTEXTVIEW);
-
 //            name.setText(""+busstopname[position]);
             name.setText(""+busstopname[position]);
             time.setText(""+busstoptime[position]);

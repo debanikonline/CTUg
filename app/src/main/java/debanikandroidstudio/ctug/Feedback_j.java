@@ -63,7 +63,7 @@ public class Feedback_j extends Fragment
                     {
                         if(fmail.isEmpty())
                         {
-                            Toast.makeText(getContext(), "We need an email to get in touch with you", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "We need your email to get in touch with you!!", Toast.LENGTH_SHORT).show();
                         }
 
                         else
@@ -76,11 +76,11 @@ public class Feedback_j extends Fragment
                                 email.setText("");
                                 phone.setText("");
                                 feedback.setText("");
-                                Toast.makeText(getContext(), "" + fname + fmail + fphone + ffeed, Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getContext(), "" + fname + fmail + fphone + ffeed, Toast.LENGTH_SHORT).show();
                             }
                             else
                             {
-                                Toast.makeText(getContext(), "Enter proper emailid", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Please check your email-id", Toast.LENGTH_SHORT).show();
                             }
 
                         }
@@ -119,7 +119,7 @@ public class Feedback_j extends Fragment
             InputStream is=con.getInputStream();
             con.connect();
             is.close();
-            Toast.makeText(getContext(), "email-"+e, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(getContext(), "email-"+e, Toast.LENGTH_SHORT).show();
 
 
         }

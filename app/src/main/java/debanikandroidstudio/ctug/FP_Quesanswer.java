@@ -60,10 +60,10 @@ public class FP_Quesanswer extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                Toast.makeText(FP_Quesanswer.this, "entered button onClick", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(FP_Quesanswer.this, "entered button onClick", Toast.LENGTH_SHORT).show();
                 checkans=ans.getText().toString();
-                Toast.makeText(FP_Quesanswer.this, "entered - "+checkans, Toast.LENGTH_SHORT).show();
-                Toast.makeText(FP_Quesanswer.this, "database - "+answer, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FP_Quesanswer.this, "entered - "+checkans, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(FP_Quesanswer.this, "database - "+answer, Toast.LENGTH_SHORT).show();
                 if(checkans.equals(answer))
                 {
                     Intent i=new Intent(getApplicationContext(),FP_3_recovery.class);
@@ -72,7 +72,7 @@ public class FP_Quesanswer extends AppCompatActivity
                 }
                 else
                 {
-                    Toast.makeText(FP_Quesanswer.this, "WHY WHY WHYYYYYY", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(FP_Quesanswer.this, "Your answer doesn't matches with records!!", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -94,7 +94,7 @@ public class FP_Quesanswer extends AppCompatActivity
     }
     public void quesans(String uname)
     {
-        Toast.makeText(this, "begin of method - "+uname, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "begin of method - "+uname, Toast.LENGTH_SHORT).show();
         String line="";
         StringBuilder bob= new StringBuilder();
         try
@@ -135,8 +135,8 @@ public class FP_Quesanswer extends AppCompatActivity
         {
 
         }
-        Toast.makeText(this, ""+question, Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, ""+answer, Toast.LENGTH_SHORT).show();
+       // Toast.makeText(this, ""+question, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, ""+answer, Toast.LENGTH_SHORT).show();
     }
 
 

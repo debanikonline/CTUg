@@ -1,14 +1,19 @@
 package debanikandroidstudio.ctug;
 
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.StrictMode;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -34,6 +39,8 @@ public class Insert_Allot_Bus extends AppCompatActivity
     List routename;
     String fetchid;
     int busrouteid;
+    TextView title;
+    Typeface ty;
     String hosturl="http://192.168.43.113/CTU/selectroute.php";
     String hosturl1="http://192.168.43.113/CTU/selectrouteid.php";
     String hosturl2="http://192.168.43.113/CTU/allotbus.php";
@@ -45,7 +52,52 @@ public class Insert_Allot_Bus extends AppCompatActivity
         StrictMode.ThreadPolicy threadPolicy=new StrictMode.ThreadPolicy.Builder().build();
         StrictMode.setThreadPolicy(threadPolicy);
         busno=(EditText)findViewById(R.id.AllotTextID);
+        title=(TextView)findViewById(R.id.textView5_allot);
+        ty=Typeface.createFromAsset(getAssets(),"fonts/debu.ttf");
+        title.setTypeface(ty);
+
+        busno.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after)
+            {
+                allotbutton.setEnabled(false);
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count)
+            {
+                if(s.length()>0)
+                {
+                    allotbutton.setEnabled(true);
+                    allotbutton.setBackgroundColor(Color.WHITE);
+                }
+                else if(s.length()==0)
+                {
+                    allotbutton.setEnabled(false);
+                    allotbutton.setBackgroundColor(Color.TRANSPARENT);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s)
+            {
+                if(s.length()>0)
+                {
+                    allotbutton.setEnabled(true);
+                    allotbutton.setBackgroundColor(Color.WHITE);
+                }
+                else if(s.length()==0)
+                {
+                    allotbutton.setEnabled(false);
+                    allotbutton.setBackgroundColor(Color.TRANSPARENT);
+                }
+
+            }
+        });
         allotbutton=(Button)findViewById(R.id.allotbutnID);
+        allotbutton.setEnabled(false);
         route=(Spinner)findViewById(R.id.allotspin);
         routename=routedetials();
         ArrayAdapter<String>adp=new ArrayAdapter<String>(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,routename);
@@ -152,7 +204,7 @@ public class Insert_Allot_Bus extends AppCompatActivity
             String details2=bob2.toString();
             JSONObject jsonObject=new JSONObject(details2);
             busrouteid=jsonObject.getInt("routeid");
-            Toast.makeText(this, ""+busrouteid, Toast.LENGTH_SHORT).show();
+           // Toast.makeText(this, ""+busrouteid, Toast.LENGTH_SHORT).show();
 
 
         }

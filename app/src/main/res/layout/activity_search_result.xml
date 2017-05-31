@@ -22,6 +22,7 @@
         <ListView
             android:id="@+id/search_busnumber_list_ID"
             android:layout_width="200sp"
+
             android:layout_height="match_parent"
             android:divider="#000000"
 

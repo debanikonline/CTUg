@@ -4,34 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="#D6D6D6"
     tools:context="debanikandroidstudio.ctug.LoginSwitcher">
+
+
+
+    <ImageButton
+        android:id="@+id/userlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/userlogo"
+
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp" />
+
+    <ImageButton
+        android:id="@+id/adminlogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/adminlogo"
+        android:layout_below="@+id/userlogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="47dp" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="11dp"
-        android:text="login_switcher" />
-
-    <ImageButton
-        android:id="@+id/userlogin"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:srcCompat="@android:drawable/star_on"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/textView4" />
-
-    <ImageButton
-        android:id="@+id/adminlogin"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginEnd="8dp"
-        app:srcCompat="@android:drawable/ic_notification_overlay"
-        android:layout_alignTop="@+id/userlogin"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginBottom="31dp"
+        android:textSize="30sp"
+        android:text="User Login"
+        android:textStyle="italic"
+        android:layout_alignBottom="@+id/userlogin"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

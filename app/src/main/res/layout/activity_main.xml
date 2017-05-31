@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="debanikandroidstudio.ctug.MainActivity"
-    android:background="#E8FEFF">
+    android:background="#D6D6D6">
 
     <EditText
         android:layout_width="wrap_content"
@@ -17,11 +18,12 @@
         android:inputType="textPersonName"
         android:textColorHint="#000000"
         android:ems="10"
-        android:hint="Name"
+        android:hint="Fingerprint ID"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:id="@+id/editTextname"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="73dp"
-        android:id="@+id/editTextname" />
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -29,7 +31,8 @@
         android:inputType="textPersonName"
         android:textColorHint="#000000"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Access Code"
+        android:gravity="center"
         android:layout_below="@+id/editTextname"
         android:layout_alignEnd="@+id/editTextname"
         android:layout_marginTop="47dp"
@@ -42,19 +45,10 @@
         android:layout_below="@+id/editTextpassword"
         android:layout_marginTop="46dp"
         android:id="@+id/buttonlogin"
-        android:textColor="#000000"
-        android:background="#E8FEFF"
+
+
         android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:layout_alignParentTop="true"
-        android:layout_toStartOf="@+id/editTextname"
-        android:text="activity_main" />
 
     <Button
         android:id="@+id/AdminForgotPasswordButtonID"
@@ -66,6 +60,15 @@
         android:layout_marginTop="34dp"
         android:text="Forgot Password"
         android:textColor="#000000"
-        android:background="#E8FEFF"/>
+        android:background="#ffffff"/>
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="27dp"
+        app:srcCompat="@drawable/adminlogo"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>

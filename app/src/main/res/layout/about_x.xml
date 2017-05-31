@@ -7,10 +7,38 @@
 
     <ImageView
         android:id="@+id/imageView4"
+        android:layout_width="200sp"
+        android:layout_height="200sp"
+        app:srcCompat="@drawable/aboutpic"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/aboutpic"
-        android:layout_marginBottom="212dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true" />
+        android:text="DEVELOPED BY"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView8"
+        android:layout_centerHorizontal="true"
+        android:textSize="30sp"
+        android:layout_marginTop="223dp"
+        android:text="Debanik Moulick" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SPIC- Center of Excellence\nEDC, IT PARK, Chandigarh\nPhone: 91-8194946794 ,\n              91-7973162445"
+        android:layout_below="@+id/textView9"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

@@ -4,23 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#D6D6D6"
     tools:context="debanikandroidstudio.ctug.Insert_Route_Detail">
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="11dp"
-        android:hint="insert_route_detail" />
 
     <EditText
         android:id="@+id/routenameID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView9"
+
         android:layout_centerHorizontal="true"
         android:layout_marginTop="77dp"
         android:ems="10"
@@ -75,19 +66,27 @@
         android:id="@+id/SaveRouteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Save"
         android:layout_below="@+id/stoptimeid"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp"
-        android:text="Save" />
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+
+        android:layout_marginTop="11dp"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:text="Route id will be Auto-Generated"
+        android:layout_alignParentTop="true" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:layout_alignEnd="@+id/routenameID"
-        android:layout_alignStart="@+id/routenameID"
-        android:layout_below="@+id/textView9"
-        android:layout_marginTop="36dp"
-        android:textSize="15dp"
-        android:text="RouteID will be Auto-Generated" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@drawable/adminlogo" />
 </RelativeLayout>

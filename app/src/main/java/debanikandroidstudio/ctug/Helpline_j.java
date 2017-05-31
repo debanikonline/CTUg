@@ -40,7 +40,7 @@ public class Helpline_j extends Fragment
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selected=contacts[position].toString();
 
-                Toast.makeText(getContext(), "selected -- "+selected, Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(getContext(), "selected -- "+selected, Toast.LENGTH_SHORT).show();
                 //if (selected.equals("Enquiry ISBT, Sector 17"))//contacts[1])
                 if(position==0)
                 {
@@ -84,7 +84,7 @@ public class Helpline_j extends Fragment
                 }
                 else
                 {
-                    Toast.makeText(getContext(), "in else loop"+position, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Click on a contact for help..!!"+position, Toast.LENGTH_SHORT).show();
 
                 }
 

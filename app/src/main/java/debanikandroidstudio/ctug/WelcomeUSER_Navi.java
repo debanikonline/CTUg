@@ -110,9 +110,7 @@ public class WelcomeUSER_Navi extends AppCompatActivity implements NavigationVie
         else if (id == R.id.aboutpc) {
             viewPager.setCurrentItem(10);
         }
-        else if (id == R.id.logoutpc) {
-            viewPager.setCurrentItem(11);
-        }
+
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

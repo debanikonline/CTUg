@@ -76,7 +76,7 @@ public class Search_Result_Activity extends AppCompatActivity
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String selected=listdetails[position].toString();
-                Toast.makeText(Search_Result_Activity.this, "you selected bus route - "+selected, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(Search_Result_Activity.this, "you selected bus route - "+selected, Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(getApplicationContext(),Showroute_search.class);
                 i.putExtra("selected",selected);
                 startActivity(i);

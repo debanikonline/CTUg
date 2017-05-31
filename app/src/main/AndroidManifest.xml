@@ -11,37 +11,60 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:screenOrientation="portrait">
 
-        <activity android:name=".WelcomeUSER_Navi">
+        <activity android:name=".SplashScreen"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ViewDetails" />
-        <activity android:name=".AdminEditor" />
-        <activity android:name=".FP_Enterusername" />
-        <activity android:name=".WelcomeADMIN" />
-        <activity android:name=".AdminOtherDatabaseSelectionView" />
-        <activity android:name=".Login_PageUser" />
-        <activity android:name=".NewUserRegisterPage" />
-        <activity android:name=".Insert_StopageDetail" />
-        <activity android:name=".Insert_Route_Detail" />
-        <activity android:name=".Insert_Allot_Bus" />
-        <activity android:name=".LoginSwitcher" />
-        <activity android:name=".Login" />
+        <activity android:name=".RegisterActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ViewDetails"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminEditor"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FP_Enterusername"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WelcomeADMIN"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".AdminOtherDatabaseSelectionView"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Login_PageUser"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".NewUserRegisterPage"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Insert_StopageDetail"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Insert_Route_Detail"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Insert_Allot_Bus"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".LoginSwitcher"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Login"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_welcome_user__navi"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashScreen" />
-        <activity android:name=".FP_Quesanswer" />
-        <activity android:name=".FP_3_recovery" />
-        <activity android:name=".Search_Result_Activity" />
-        <activity android:name=".Showroute_search"></activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".WelcomeUSER_Navi"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FP_Quesanswer"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".FP_3_recovery"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Search_Result_Activity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Showroute_search"
+            android:screenOrientation="portrait">
+
+        </activity>
     </application>
 
 </manifest>

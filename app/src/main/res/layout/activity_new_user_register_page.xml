@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     tools:context="debanikandroidstudio.ctug.NewUserRegisterPage"
-    android:background="@drawable/animationlist">
+    android:background="#D6D6D6">
 
 <!--<ScrollView-->
     <!--android:layout_width="match_parent"-->
@@ -73,7 +73,7 @@
         android:layout_width="330sp"
         android:layout_height="50sp"
         android:textSize="45px"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
         android:background="#26ffffff"
         android:padding="27px"
         android:layout_marginTop="36dp"
@@ -89,7 +89,7 @@
         android:layout_width="330sp"
         android:layout_height="50sp"
         android:textSize="45px"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
         android:background="#26ffffff"
         android:padding="27px"
         android:layout_alignEnd="@+id/newuser_NameID"
@@ -105,7 +105,7 @@
         android:layout_width="330sp"
         android:layout_height="50sp"
         android:textSize="45px"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
         android:background="#26ffffff"
         android:layout_alignStart="@+id/newuser_emailID"
         android:layout_below="@+id/newuser_emailID"
@@ -121,7 +121,7 @@
         android:layout_height="50sp"
         android:textSize="45px"
         android:padding="27px"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
         android:background="#26ffffff"
         android:layout_alignStart="@+id/newuser_PhoneID"
         android:layout_below="@+id/newuser_PhoneID"
@@ -138,23 +138,24 @@
         android:textSize="45px"
         android:padding="27px"
         android:gravity="center"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
 
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="7dp"
 
         android:hint="Select Secret Question"
         android:layout_below="@+id/newuser_PasswordID"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignStart="@+id/newuser_PasswordID" />
 
     <Spinner
         android:id="@+id/newuser_SpinnerID"
         android:textColorHint="@color/blue_500"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:spinnerMode="dialog"
+        android:layout_marginStart="14dp"
         android:layout_below="@+id/textView10"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="15dp" />
+        android:layout_alignStart="@+id/newuser_AnswerID"
+        android:layout_marginTop="10dp" />
 
     <EditText
         android:id="@+id/newuser_AnswerID"
@@ -162,14 +163,13 @@
         android:layout_height="50sp"
         android:textSize="45px"
         android:padding="27px"
-        android:textColorHint="#ffffff"
+        android:textColorHint="#000"
         android:background="#26ffffff"
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Type Your Answer"
         android:layout_below="@+id/newuser_SpinnerID"
-        android:layout_alignStart="@+id/newuser_PasswordID"
-        android:layout_marginTop="11dp" />
+        android:layout_alignStart="@+id/textView10" />
 
     <Button
         android:id="@+id/newuser_ButtonID"
@@ -188,7 +188,7 @@
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/blue_500"
+        android:textColor="#000000"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="11dp"

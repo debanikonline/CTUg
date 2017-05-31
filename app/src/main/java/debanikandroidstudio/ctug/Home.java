@@ -93,7 +93,7 @@ public class Home extends android.support.v4.app.Fragment
 
                             Intent i=new Intent(getContext(),Search_Result_Activity.class);
                             i.putExtra("a",a);
-                            Toast.makeText(getContext(), "transfer- "+a, Toast.LENGTH_SHORT).show();
+                           // Toast.makeText(getContext(), "transfer- "+a, Toast.LENGTH_SHORT).show();
                             startActivity(i);
                         }
                     });
@@ -117,7 +117,7 @@ public class Home extends android.support.v4.app.Fragment
         {
             URL url=new URL(hosturl);
             HttpURLConnection connection=(HttpURLConnection)url.openConnection();
-            Toast.makeText(getContext(),"connection ok",Toast.LENGTH_LONG).show();
+           // Toast.makeText(getContext(),"connection ok",Toast.LENGTH_LONG).show();
             connection.setRequestMethod("POST");
             connection.setDoOutput(true);
             InputStream is=connection.getInputStream();
